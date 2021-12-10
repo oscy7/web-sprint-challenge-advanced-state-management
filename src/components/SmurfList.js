@@ -2,10 +2,14 @@ import React from 'react';
 import Smurf from './Smurf';
 import {connect} from 'react-redux';
 
+//Step 1: connect smurf and loading state.
+//Step 2: Create smurf.map and single smurf component. 
+//Step 3: Pass my own loading value from my action/reducer 
 
  const SmurfList = (props)=> {
     const {smurf} = props
-    const isLoading = false;
+    
+    const loading = false;
     const testSmurf = {
         id:"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9",
         name:'Poppa Smurf',
@@ -13,7 +17,7 @@ import {connect} from 'react-redux';
         nickname: 'Pops',
         description: 'Papa is the practical village leader and the father figure of 100 or so young Smurfs. He is easily identified by his red Smurf hat, pants, and a shortly-trimmed white beard and moustache.'
     }
-    if (isLoading) {
+    if (loading) {
         return <h1>Loading...</h1>;
     }
     return(<div className="listContainer">

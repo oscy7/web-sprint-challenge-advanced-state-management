@@ -5,6 +5,10 @@ export const ERROR = 'ERROR';
 export const LOADING = 'LOADING';
 export const ADD = 'ADD';
 
+//Step 1: import Axios and do a axios.get Call on the API. Console Log results to make sure it works.
+//Step 2: Create Loading, Success and ErrorMessage actions. NOTE: Loading should not have a payload.  
+//Step 3: Create addSmurf axios post. This will allow us to post our own smurf in AddForm. 
+//Step 4: Make sure everything is exported so we can use in Reducer. 
 export const fetchSmurfs = () => (dispatch) =>{
     dispatch(loading())
     axios.get('http://localhost:3333/smurfs')

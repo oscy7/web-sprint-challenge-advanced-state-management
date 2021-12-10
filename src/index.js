@@ -15,6 +15,8 @@ worker.start();
 
 const rootElement = document.getElementById("root");
 
+//First Step: Connect store and pass reducer, applyMid, thunk and logger. NOTE: logger must be last. 
+//Last Step: Wrap App with Provider.
 const store = createStore(reducer, applyMiddleware(thunk, logger));
 
 ReactDOM.render(
@@ -23,6 +25,6 @@ ReactDOM.render(
 );
 
 //Task List:
-//1. Add in all necessary components and libary methods.done
-//2. Create a store that includes thunk and logger middleware support. done
-//3. Wrap the App component in a react-redux Provider element.done
+//1. Add in all necessary components and libary methods.
+//2. Create a store that includes thunk and logger middleware support.
+//3. Wrap the App component in a react-redux Provider element.

@@ -14,7 +14,7 @@ import {fetchSmurfs, success, errorMessage} from './actions/index';
 
 const App = (props)=> {
   const {fetchSmurfs} = props
-
+//Calling fetchsmurf API from actions. 
   useEffect( () => {
     fetchSmurfs();
   }, []);
@@ -30,7 +30,7 @@ const App = (props)=> {
     </div>
   );
 }
-
+//Connect the actions 
 const mapStateToProps = (state) => {
     return{
       smurf: state.smurf,

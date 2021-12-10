@@ -1,12 +1,14 @@
 import { ERROR, LOADING, SUCCESS, ADD } from "../actions/index"
 
-
+//Step 1: Declare Init State.
 export const initialState = {
     smurf: [],
     loading: false,
     error: ''
 }
 
+//Step 2: Declare reducer function where state=initialState. 
+//Step 3: Import the actions to here. Then set cases from each. 
 const reducer = (state = initialState, action)=>{
     switch(action.type){
         case LOADING: 

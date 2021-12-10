@@ -2,6 +2,10 @@ import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import {fetchSmurfs, errorMessage, addSmurf} from '../actions/index';
 
+//Step 1: Import actions. And Connect them at the bottom. NOTE: No mapPropsToState because we have state declared already. Set to NULL
+//Step 2: Make sure props are being passed through AddForm and set props.errorMessage in the handleSubmit f(x) with error message of my choice. 
+//Step 3: Else: addSmurf and pass state into it. 
+//Step 4: Make sure handleSubmit is being passed into the button. 
 
 const AddForm = (props) => {
     const [state, setState] = useState({
@@ -10,7 +14,6 @@ const AddForm = (props) => {
         nickname:"",
         description:""
     });
-    
     const handleChange = e => {
         setState({
             ...state,
