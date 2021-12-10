@@ -112,9 +112,21 @@ In this project, you will build the reducer, actions and basic redux connects to
 Be prepared to demonstrate your understanding of this week's concepts by answering questions on the following topics. Add your answers below.
 
 1. What problem does the context API help solve?
+Context api provides a way to to share values between components without having to explicity pass props through every level of the component tree.
 
 2. In your own words, describe `actions`, `reducers` and the `store` and their role in Redux. What does each piece do? Why is the store known as a 'single source of truth' in a redux application?
 
+Store: The purpose of the store is to hold the state of the application. This is a centralized "bank" (or single source of truth) where we have access to state and where we use action to update state.
+Actions: This is the way the application interacts with the store. We use this to update the state.
+Reducer: This is a function where we take in the current state and an action object and eject a new state based on the two arguments passed in. It is like an event listener that handles events based on the action passed into it. 
+
 3. What does `redux-thunk` allow us to do? How does it change our `action-creators`?
+Redux is naturally performs synchronous operations. Thunk allows us to run asynchronously. It is a function that returns another function and helps us avoid causing side effects in our actions and action creators. By invoking with middleware we are able to run api calls, continue on with code, all without having to wait for that call to finish. 
 
 4. What is your favorite state management system you've learned and this sprint? Please explain why!
+
+So far I think redux using context API is my favorite. Although redux has difficult to understand syntax, I think once I understand it with much practice, not only will it be easy, but also with context api, Ill be able to dish out code for complex application quite quickly.
+
+ Whereas using prop drilling and not using a store, I feel like I have to stop often to have a mental model of all of the components and where data is coming from and passed to. 
+
+I enjoy not having to explicity define props because that can be tedious and annoying at times and opens room for a lot of error. 
