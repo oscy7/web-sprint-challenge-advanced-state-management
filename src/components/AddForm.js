@@ -1,4 +1,7 @@
 import React, { useState } from 'react';
+import { connect } from 'react-redux';
+import {fetchSmurfs, errorMessage, addSmurf} from '../actions/index';
+
 
 const AddForm = (props) => {
     const [state, setState] = useState({
@@ -7,6 +10,8 @@ const AddForm = (props) => {
         nickname:"",
         description:""
     });
+
+    const {smurf} = props;
 
     //remove when error state is added
     const errorMessage = "";
@@ -22,8 +27,11 @@ const AddForm = (props) => {
         e.preventDefault();
         if (state.name === "" || state.position === "" || state.nickname === "") {
             //dispatch a custom error action
+            
         } else {
             //dispatch an addSmurf action
+            props.addSmurf(state);
+            
         }
     }
 
@@ -54,7 +62,7 @@ const AddForm = (props) => {
     </section>);
 }
 
-export default AddForm;
+export default connect(null, {fetchSmurfs, addSmurf, errorMessage}) (AddForm);
 
 //Task List:
 //1. Connect the errorMessage, setError and addSmurf actions to the AddForm component.
