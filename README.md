@@ -117,7 +117,9 @@ Context api provides a way to to share values between components without having 
 2. In your own words, describe `actions`, `reducers` and the `store` and their role in Redux. What does each piece do? Why is the store known as a 'single source of truth' in a redux application?
 
 Store: The purpose of the store is to hold the state of the application. This is a centralized "bank" (or single source of truth) where we have access to state and where we use action to update state.
+
 Actions: This is the way the application interacts with the store. We use this to update the state.
+
 Reducer: This is a function where we take in the current state and an action object and eject a new state based on the two arguments passed in. It is like an event listener that handles events based on the action passed into it. 
 
 3. What does `redux-thunk` allow us to do? How does it change our `action-creators`?
