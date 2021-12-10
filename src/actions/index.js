@@ -5,9 +5,6 @@ export const ERROR = 'ERROR';
 export const LOADING = 'LOADING';
 export const ADD = 'ADD';
 
-
-
-
 export const fetchSmurfs = () => (dispatch) =>{
     dispatch(loading())
     axios.get('http://localhost:3333/smurfs')

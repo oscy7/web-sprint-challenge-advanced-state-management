@@ -4,43 +4,32 @@ import {fetchSmurfs, errorMessage, addSmurf} from '../actions/index';
 
 
 const AddForm = (props) => {
-
-
     const [state, setState] = useState({
         name:"",
         position:"",
         nickname:"",
         description:""
     });
-
-
     const {smurf} = props;
-    console.log('ADD FORM PROPS:',props, state)
-
     //remove when error state is added
     //const errorMessage = ''
-
     const handleChange = e => {
         setState({
             ...state,
             [e.target.name]:e.target.value
         });
     }
-
     const handleSubmit = e => {
         e.preventDefault();
         if (state.name === "" || state.position === "" || state.nickname === "") {
             //dispatch a custom error action
             props.errorMessage('All Inputs Required')
-            
         } else {
             //dispatch an addSmurf action
             e.preventDefault();
-            props.addSmurf(state);
-            
+            props.addSmurf(state);  
         }
     }
-
     return(<section>
         <h2>Add Smurf</h2>
         <form onSubmit={handleSubmit}>

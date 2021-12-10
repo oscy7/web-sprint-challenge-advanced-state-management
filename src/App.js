@@ -15,11 +15,6 @@ import axios from "axios";
 const App = (props)=> {
   const {loading, error, fetchSmurfs} = props
 
-
-
-  console.log('LOOK HERE',props)
-
-
   useEffect( () => {
     fetchSmurfs();
   }, []);

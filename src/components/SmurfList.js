@@ -5,8 +5,6 @@ import {connect} from 'react-redux';
 
  const SmurfList = (props)=> {
     const {smurf, loading} = props
-
-
     const isLoading = false;
     const testSmurf = {
         id:"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9",
@@ -15,11 +13,9 @@ import {connect} from 'react-redux';
         nickname: 'Pops',
         description: 'Papa is the practical village leader and the father figure of 100 or so young Smurfs. He is easily identified by his red Smurf hat, pants, and a shortly-trimmed white beard and moustache.'
     }
-
     if (isLoading) {
         return <h1>Loading...</h1>;
     }
-
     return(<div className="listContainer">
         <Smurf smurf={testSmurf}/>
         {
@@ -28,17 +24,12 @@ import {connect} from 'react-redux';
         <Smurf smurf={smurf}/>
     </div>);
 }
-
-
 const mapStateToProps = (state) => {
     return({
         smurf: state.smurf,
         loading: state.loading
     })
 }
-
-
-
 export default connect(mapStateToProps) (SmurfList);
 
 //Task List:
