@@ -4,7 +4,7 @@ import {connect} from 'react-redux';
 
 
  const SmurfList = (props)=> {
-    const {smurf, loading} = props
+    const {smurf} = props
     const isLoading = false;
     const testSmurf = {
         id:"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9",
