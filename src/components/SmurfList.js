@@ -4,9 +4,9 @@ import {connect} from 'react-redux';
 
 
  const SmurfList = (props)=> {
-    const {smurf} = props
+    const {smurf, loading} = props
 
-    
+
     const isLoading = false;
     const testSmurf = {
         id:"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9",
@@ -22,13 +22,18 @@ import {connect} from 'react-redux';
 
     return(<div className="listContainer">
         <Smurf smurf={testSmurf}/>
+        {
+            smurf.map((smurf, id)=> <Smurf key={id} smurf={smurf}/>)
+        }
+        <Smurf smurf={smurf}/>
     </div>);
 }
 
 
 const mapStateToProps = (state) => {
     return({
-        smurf: state.smurf
+        smurf: state.smurf,
+        loading: state.loading
     })
 }
 

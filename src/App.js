@@ -9,13 +9,19 @@ import "./App.css";
 
 import {useState, useEffect} from 'react';
 import {connect} from 'react-redux'
-import {fetchSmurfs} from './actions/index'
+import {fetchSmurfs, success} from './actions/index';
+import axios from "axios";
 
 const App = (props)=> {
-  const {loading, error} = props
+  const {loading, error, fetchSmurfs} = props
+
+
+
   console.log('LOOK HERE',props)
+
+
   useEffect( () => {
-    props.fetchSmurfs();
+    fetchSmurfs();
   }, []);
 
   return (
@@ -32,12 +38,12 @@ const App = (props)=> {
 
 const mapStateToProps = (state) => {
     return{
-      // smurf: state.smurf,
+      smurf: state.smurf,
       loading: state.loading,
       error: state.error
     }
 }
-export default connect(mapStateToProps, {fetchSmurfs}) (App);
+export default connect(mapStateToProps, {fetchSmurfs, success}) (App);
 
 //Task List:
 //1. Connect the fetchSmurfs actions to the App component. done

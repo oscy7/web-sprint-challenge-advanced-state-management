@@ -4,6 +4,8 @@ import {fetchSmurfs, errorMessage, addSmurf} from '../actions/index';
 
 
 const AddForm = (props) => {
+
+
     const [state, setState] = useState({
         name:"",
         position:"",
@@ -11,10 +13,12 @@ const AddForm = (props) => {
         description:""
     });
 
+
     const {smurf} = props;
+    console.log('ADD FORM PROPS:',props, state)
 
     //remove when error state is added
-    const errorMessage = "";
+    //const errorMessage = ''
 
     const handleChange = e => {
         setState({
@@ -27,9 +31,11 @@ const AddForm = (props) => {
         e.preventDefault();
         if (state.name === "" || state.position === "" || state.nickname === "") {
             //dispatch a custom error action
+            props.errorMessage('All Inputs Required')
             
         } else {
             //dispatch an addSmurf action
+            e.preventDefault();
             props.addSmurf(state);
             
         }
@@ -57,7 +63,7 @@ const AddForm = (props) => {
             {
                 errorMessage && <div data-testid="errorAlert" className="alert alert-danger" role="alert">Error: {errorMessage}</div>
             }
-            <button>Submit Smurf</button>
+            <button onClick={handleSubmit}>Submit Smurf</button>
         </form>
     </section>);
 }

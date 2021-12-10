@@ -12,7 +12,8 @@ const reducer = (state = initialState, action)=>{
         case LOADING: 
             return {
                 ...state,
-                loading: true
+                loading: true,
+                error: ''
             }
         case ERROR: 
             return {
@@ -24,17 +25,12 @@ const reducer = (state = initialState, action)=>{
             return{ 
                 ...state,
                 loading: false,
-                smurf: action.payload
+                smurf:action.payload,
+                error:''
             }
         case ADD:
-            const newSmurf = {
-                ...action.payload,
-                //id: smurf.id
-            }
             return{
-                ...state,
-                loading: false,
-                smurf: [...state, newSmurf]
+                ...state, smurf:[...state.smurf, action.payload]
             }
         default: 
             return (state)
